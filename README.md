@@ -8,11 +8,10 @@ The repository is organized by the type of data structure or algorithm by .cpp f
 LeetCode folder contain practice questions sorted by data structure type 
 
 ### Data Structures
-- **Arrays** 
 - **Linked Lists** ✔
 - **Doubly Linked Lists** ✔
-- **Stacks**
-- **Queues**
+- **Stacks** ✔
+- **Queues** ✔
 - **Trees**
 - **Graphs**
 - **Heaps**
