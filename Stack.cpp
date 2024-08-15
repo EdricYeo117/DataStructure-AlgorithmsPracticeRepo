@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Stack Class
+// Last In First Out
 class Node
 {
 public:
@@ -19,7 +21,7 @@ class Stack
 private:
     Node *top;
     int height;
-
+    // Constructor
 public:
     Stack(int value)
     {
@@ -64,6 +66,30 @@ public:
     void getHeight()
     {
         cout << "Height: " << height << endl;
+    }
+
+    // Push a new node to the stack
+    void push(int value)
+    {
+        Node *newNode = new Node(value);
+        newNode->next = top;
+        top = newNode;
+        height++;
+    }
+
+    // Pop the top node from the stack, returns the value (can be edited to use void)
+    int pop()
+    {   
+        if (height == 0) return INT_MIN;
+        // Create a temp node to store the top node
+        Node* temp = top;
+        // Store the value of the top node
+        int poppedValue = top->value;
+        // Move the top node to the next node
+        top = top->next;
+        delete temp;
+        height--;
+        return poppedValue;
     }
 };
 
