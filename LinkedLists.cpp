@@ -61,7 +61,7 @@ class LinkedList {
         cout << "Length: " << length << endl;
     }
 
-    // Method to append a new node to the linked list
+       // Append a new node - O(1)
     void append(int value) {
         Node* newNode = new Node(value);
         // Check if the linked list is empty
@@ -77,6 +77,7 @@ class LinkedList {
         length++;
     }
     
+    // Delete the last node - O(n)
     void deleteLast() {
         // Check if the linked list is empty
         if (length == 0) return;
@@ -103,7 +104,8 @@ class LinkedList {
         length--;
     }
 
-    void prepend (int value) {
+    // Prepend a new node - O(1)
+    void prepend(int value) {
         // Create node 
         Node* newNode = new Node(value);
         // Check if the linked list is empty
@@ -121,8 +123,8 @@ class LinkedList {
         length++;
     }
     
-    // Method to delete the first node
-    void deleteFirst () {
+    // Delete the first node - O(1)
+    void deleteFirst() {
         // Check if the linked list is empty
         if (length == 0) return;
         // Create a temp node, set to head
@@ -138,8 +140,8 @@ class LinkedList {
         length--;
     }
 
-    // Get a node at particular index
-    Node* get (int index) {
+    // Get a node at a particular index - O(n)
+    Node* get(int index) {
         // Checks if index is negative or exceeds length of LinkedList
         if (index < 0 || index >= length) {
             return nullptr;
@@ -153,8 +155,8 @@ class LinkedList {
         return temp;
     }
 
-    // Set a value at a particular index
-    bool set (int index, int value) {
+    // Set a value at a particular index - O(n)
+    bool set(int index, int value) {
         // Get the node at the index
         Node* temp = get(index);
         // Check if temp is pointing to a node
@@ -165,8 +167,8 @@ class LinkedList {
         return false;
     }
 
-    // Insert a value at a particular index
-    bool insert (int index, int value) {
+    // Insert a value at a particular index - O(n)
+    bool insert(int index, int value) {
          // Check if index is negative or exceeds length of LinkedList
         if (index < 0 || index > length) return false;
         // If index = 0, call prepend method
@@ -174,7 +176,7 @@ class LinkedList {
            prepend(value);
            return true;
         }
-        // If index = length of linked ist, call append method
+        // If index = length of linked list, call append method
         if (index == length) {
             append(value);
             return true;
@@ -191,8 +193,8 @@ class LinkedList {
         return true;
     }
 
-    // Remove a node at a particular index
-    void deleteNode (int index) {
+    // Remove a node at a particular index - O(n)
+    void deleteNode(int index) {
         // Check if index is negative or exceeds length of LinkedList
         if (index < 0 || index >= length) return;
         // Check if index = 0
@@ -211,6 +213,7 @@ class LinkedList {
         length--;
     }
 
+    // Reverse the linked list - O(n)
     void reverse() {
         // Create a temp node, set to head
         Node* temp = head;
