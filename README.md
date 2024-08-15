@@ -4,7 +4,8 @@
 This repository contains my practice implementations of various data structures and algorithms in C++. The primary goal is to reinforce my understanding of fundamental concepts, enhance problem-solving skills, and prepare for technical interviews.
 
 ## Contents
-The repository is organized by the type of data structure or algorithm. Each folder contains C++ implementations
+The repository is organized by the type of data structure or algorithm by .cpp files. Each .cpp file contains respective C++ implementations
+LeetCode folder contain practice questions sorted by data structure type 
 
 ### Data Structures
 - **Arrays** 
