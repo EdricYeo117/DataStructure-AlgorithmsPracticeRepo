@@ -12,7 +12,7 @@ LeetCode folder contain practice questions sorted by data structure type
 - **Doubly Linked Lists** ✔
 - **Stacks** ✔
 - **Queues** ✔
-- **Trees**
+- **Trees** ✔
 - **Graphs**
 - **Heaps**
 - **Hash Tables**
