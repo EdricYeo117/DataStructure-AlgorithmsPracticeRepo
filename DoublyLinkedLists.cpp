@@ -292,13 +292,78 @@ public:
 
 int main()
 {
-
     DoublyLinkedList *myDLL = new DoublyLinkedList(7);
-
+    cout << "Initial List:\n";
+    myDLL->printList();
     myDLL->getHead();
     myDLL->getTail();
     myDLL->getLength();
 
-    cout << "\nDoubly Linked List:\n";
+    // Test append
+    myDLL->append(10);
+    myDLL->append(13);
+    cout << "\nAfter appending 10 and 13:\n";
     myDLL->printList();
+    myDLL->getHead();
+    myDLL->getTail();
+    myDLL->getLength();
+
+    // Test prepend
+    myDLL->prepend(5);
+    cout << "\nAfter prepending 5:\n";
+    myDLL->printList();
+    myDLL->getHead();
+    myDLL->getTail();
+    myDLL->getLength();
+
+    // Test deleteFirst
+    myDLL->deleteFirst();
+    cout << "\nAfter deleting the first node:\n";
+    myDLL->printList();
+    myDLL->getHead();
+    myDLL->getTail();
+    myDLL->getLength();
+
+    // Test deleteLast
+    myDLL->deleteLast();
+    cout << "\nAfter deleting the last node:\n";
+    myDLL->printList();
+    myDLL->getHead();
+    myDLL->getTail();
+    myDLL->getLength();
+
+    // Test get
+    Node *node = myDLL->get(1);
+    if (node != nullptr)
+    {
+        cout << "\nNode at index 1: " << node->value << endl;
+    }
+    else
+    {
+        cout << "\nNode at index 1: nullptr" << endl;
+    }
+
+    // Test set
+    if (myDLL->set(1, 99))
+    {
+        cout << "\nAfter setting index 1 to 99:\n";
+        myDLL->printList();
+    }
+
+    // Test insert
+    if (myDLL->insert(1, 77))
+    {
+        cout << "\nAfter inserting 77 at index 1:\n";
+        myDLL->printList();
+    }
+
+    // Test deleteNode
+    myDLL->deleteNode(1);
+    cout << "\nAfter deleting node at index 1:\n";
+    myDLL->printList();
+    myDLL->getHead();
+    myDLL->getTail();
+    myDLL->getLength();
+
+    delete myDLL;
 }

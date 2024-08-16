@@ -192,16 +192,46 @@ public:
 
 int main()
 {
-
     BinarySearchTree *myBST = new BinarySearchTree();
 
-    // ROOT MUST BE PUBLIC FOR THIS LINE TO WORK:
-    cout << "Root: " << myBST->root;
+    // Insert values into the BST
+    myBST->insert(10);
+    myBST->insert(5);
+    myBST->insert(15);
+    myBST->insert(2);
+    myBST->insert(7);
+    myBST->insert(13);
+    myBST->insert(18);
 
-    /*
-        EXPECTED OUTPUT:
-        ----------------
-        Root: 0x0
+    // Test if the BST contains specific values
+    cout << "Contains 10: " << myBST->contains(10) << endl; // Should print 1 (true)
+    cout << "Contains 7: " << myBST->contains(7) << endl;   // Should print 1 (true)
+    cout << "Contains 6: " << myBST->contains(6) << endl;   // Should print 0 (false)
 
-    */
+    // Delete some values
+    myBST->deleteValue(7);  // Deleting a leaf node
+    myBST->deleteValue(15); // Deleting a node with one child
+    myBST->deleteValue(10); // Deleting the root node (with two children)
+
+    // Check the structure after deletions
+    cout << "Contains 7: " << myBST->contains(7) << endl;   // Should print 0 (false)
+    cout << "Contains 15: " << myBST->contains(15) << endl; // Should print 0 (false)
+    cout << "Contains 10: " << myBST->contains(10) << endl; // Should print 0 (false)
+    cout << "Contains 13: " << myBST->contains(13) << endl; // Should print 1 (true)
+
+    // Print the root node to verify the new root after deletion
+    if (myBST->root != nullptr)
+    {
+        cout << "New Root: " << myBST->root->value << endl;
+    }
+    else
+    {
+        cout << "Tree is empty" << endl;
+    }
+
+    // Clean up
+    delete myBST;
+
+    return 0;
 }
+

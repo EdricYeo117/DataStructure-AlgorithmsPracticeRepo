@@ -79,10 +79,11 @@ public:
 
     // Pop the top node from the stack, returns the value (can be edited to use void)
     int pop()
-    {   
-        if (height == 0) return INT_MIN;
+    {
+        if (height == 0)
+            return INT_MIN;
         // Create a temp node to store the top node
-        Node* temp = top;
+        Node *temp = top;
         // Store the value of the top node
         int poppedValue = top->value;
         // Move the top node to the next node
@@ -97,9 +98,56 @@ int main()
 {
     Stack *myStack = new Stack(4);
 
-    myStack->getTop();
-    myStack->getHeight();
+    // Initial state
+    myStack->getTop();    // Should print 4
+    myStack->getHeight(); // Should print 1
 
+    // Print initial stack
     cout << "\nStack:\n";
-    myStack->printStack();
+    myStack->printStack(); // Should print 4
+
+    // Push more elements
+    myStack->push(8);
+    myStack->push(12);
+    myStack->push(16);
+
+    // State after pushing
+    myStack->getTop();    // Should print 16
+    myStack->getHeight(); // Should print 4
+
+    // Print stack after pushing
+    cout << "\nStack after pushing 8, 12, 16:\n";
+    myStack->printStack(); // Should print 16, 12, 8, 4
+
+    // Pop some elements
+    cout << "\nPopped value: " << myStack->pop() << endl; // Should print 16
+    cout << "Popped value: " << myStack->pop() << endl;   // Should print 12
+
+    // State after popping
+    myStack->getTop();    // Should print 8
+    myStack->getHeight(); // Should print 2
+
+    // Print stack after popping
+    cout << "\nStack after popping two elements:\n";
+    myStack->printStack(); // Should print 8, 4
+
+    // Pop remaining elements
+    cout << "\nPopped value: " << myStack->pop() << endl; // Should print 8
+    cout << "Popped value: " << myStack->pop() << endl;   // Should print 4
+
+    // State after popping all elements
+    myStack->getTop();    // Should print nullptr
+    myStack->getHeight(); // Should print 0
+
+    // Print stack after all elements are popped
+    cout << "\nStack after popping all elements:\n";
+    myStack->printStack(); // Should print nothing
+
+    // Test pop on empty stack
+    cout << "\nPopped value from empty stack: " << myStack->pop() << endl; // Should print INT_MIN
+
+    // Clean up
+    delete myStack;
+
+    return 0;
 }

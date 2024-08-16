@@ -241,11 +241,140 @@ class LinkedList {
 };
 
 int main() {
+    // Create a new LinkedList with an initial value
     LinkedList* myLinkedList = new LinkedList(4);
-    myLinkedList->getHead();
-    myLinkedList->getTail();
-    myLinkedList->getLength();
+
+    // Test the getHead, getTail, and getLength functions
+    cout << "Initial state:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 4
+    myLinkedList->getTail();    // Expected: Tail: 4
+    myLinkedList->getLength();  // Expected: Length: 1
+
+    // Append a new node with value 2
     myLinkedList->append(2);
 
-    myLinkedList->printList();
+    cout << "\nAfter appending 2:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 4
+    myLinkedList->getTail();    // Expected: Tail: 2
+    myLinkedList->getLength();  // Expected: Length: 2
+    myLinkedList->printList();  // Expected: 4 2
+
+    // Prepend a new node with value 6
+    myLinkedList->prepend(6);
+
+    cout << "\nAfter prepending 6:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 6
+    myLinkedList->getTail();    // Expected: Tail: 2
+    myLinkedList->getLength();  // Expected: Length: 3
+    myLinkedList->printList();  // Expected: 6 4 2
+
+    // Insert a new node with value 10 at index 1
+    myLinkedList->insert(1, 10);
+
+    cout << "\nAfter inserting 10 at index 1:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 6
+    myLinkedList->getTail();    // Expected: Tail: 2
+    myLinkedList->getLength();  // Expected: Length: 4
+    myLinkedList->printList();  // Expected: 6 10 4 2
+
+    // Delete the node at index 2
+    myLinkedList->deleteNode(2);
+
+    cout << "\nAfter deleting the node at index 2:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 6
+    myLinkedList->getTail();    // Expected: Tail: 2
+    myLinkedList->getLength();  // Expected: Length: 3
+    myLinkedList->printList();  // Expected: 6 10 2
+
+    // Reverse the linked list
+    myLinkedList->reverse();
+
+    cout << "\nAfter reversing the linked list:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 2
+    myLinkedList->getTail();    // Expected: Tail: 6
+    myLinkedList->getLength();  // Expected: Length: 3
+    myLinkedList->printList();  // Expected: 2 10 6
+
+    // Delete the first node
+    myLinkedList->deleteFirst();
+
+    cout << "\nAfter deleting the first node:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 10
+    myLinkedList->getTail();    // Expected: Tail: 6
+    myLinkedList->getLength();  // Expected: Length: 2
+    myLinkedList->printList();  // Expected: 10 6
+
+    // Delete the last node
+    myLinkedList->deleteLast();
+
+    cout << "\nAfter deleting the last node:" << endl;
+    myLinkedList->getHead();    // Expected: Head: 10
+    myLinkedList->getTail();    // Expected: Tail: 10
+    myLinkedList->getLength();  // Expected: Length: 1
+    myLinkedList->printList();  // Expected: 10
+
+    // Clean up
+    delete myLinkedList;
+
+    /*
+        EXPECTED OUTPUT:
+        ----------------
+        Initial state:
+        Head: 4
+        Tail: 4
+        Length: 1
+
+        After appending 2:
+        Head: 4
+        Tail: 2
+        Length: 2
+        4
+        2
+
+        After prepending 6:
+        Head: 6
+        Tail: 2
+        Length: 3
+        6
+        4
+        2
+
+        After inserting 10 at index 1:
+        Head: 6
+        Tail: 2
+        Length: 4
+        6
+        10
+        4
+        2
+
+        After deleting the node at index 2:
+        Head: 6
+        Tail: 2
+        Length: 3
+        6
+        10
+        2
+
+        After reversing the linked list:
+        Head: 2
+        Tail: 6
+        Length: 3
+        2
+        10
+        6
+
+        After deleting the first node:
+        Head: 10
+        Tail: 6
+        Length: 2
+        10
+        6
+
+        After deleting the last node:
+        Head: 10
+        Tail: 10
+        Length: 1
+        10
+    */
 }
