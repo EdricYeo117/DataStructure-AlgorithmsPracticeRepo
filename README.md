@@ -13,9 +13,9 @@ LeetCode folder contain practice questions sorted by data structure type
 - **Stacks** ✔
 - **Queues** ✔
 - **Trees** ✔
-- **Graphs**
-- **Heaps**
-- **Hash Tables**
+- **Graphs** ✔
+- **Heaps** ✔
+- **Hash Tables** ✔
 
 ### Algorithms
 - **Sorting Algorithms**
