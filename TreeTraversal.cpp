@@ -82,6 +82,10 @@ class BinarySearchTree {
             }
             return false;
         }
+        
+    // ---------------------------------------------------
+    //  Breadth First Search
+    // ---------------------------------------------------
 
 void BFS() {    
     // Start BFS from the root node of the tree
@@ -92,7 +96,7 @@ void BFS() {
     myQueue.push(currentNode);
     
     // Loop through the queue until all nodes are visited
-    while (myQueue.size() > 0) {
+    while (!myQueue.empty()) {
         // Get the next node from the front of the queue
         currentNode = myQueue.front();
         myQueue.pop();
@@ -110,10 +114,81 @@ void BFS() {
             myQueue.push(currentNode->right);
         }
 }
+}
+
+    // ---------------------------------------------------
+    //  Depth First Search - PreOrder Traversal
+    // ---------------------------------------------------
+
+void DFSPreOrder(Node* currentNode) {
+    // print current node's value
+    cout << currentNode->value << " ";
+    // traverse left subtree recursively
+    if (currentNode->left != nullptr) {
+        // Recursively call the DFSPreOrder function on the left child
+        DFSPreOrder(currentNode->left);
+    }
+    // traverse right subtree recursively
+    if (currentNode->right != nullptr) {
+        // Recursively call the DFSPreOrder function on the right child
+        DFSPreOrder(currentNode->right);
+    }
+}
+
+void DFSPreOrder() {
+    DFSPreOrder(root);
+}
+
+    // ---------------------------------------------------
+    //  Depth First Search - PostOrder Traversal
+    // ---------------------------------------------------
+
+void DFSPostOrder(Node* currentNode) {
+    // traverse left subtree recursively
+    if (currentNode->left != nullptr) {
+        // Recursively call the DFSPostOrder function on the left child
+        DFSPostOrder(currentNode->left);
+    }
+    // traverse right subtree recursively
+    if (currentNode->right != nullptr) {
+        // Recursively call the DFSPostOrder function on the right child
+        DFSPostOrder(currentNode->right);
+    }
+    // print current node's value
+    cout << currentNode->value << " ";
+}
+
+void DFSPostOrder() {
+    DFSPostOrder(root);
+}
+
+    // ---------------------------------------------------
+    //  Depth First Search - InOrder Traversal
+    // ---------------------------------------------------
+    
+void DFSInOrder(Node* currentNode) {
+    // Check if the left child of the current node exists
+    if (currentNode->left != nullptr) {
+        // Recursively call the DFSInOrder function on the left child
+        DFSInOrder(currentNode->left);
+    }
+    
+    // Print the value of the current node
+    cout << currentNode->value << " ";
+ 
+    // Check if the right child of the current node exists
+    if (currentNode->right != nullptr) {
+        // Recursively call the DFSInOrder function on the right child
+        DFSInOrder(currentNode->right);
+    }
+}
+
+void DFSInOrder() {
+    DFSInOrder(root);
+}
 };
 
 int main() {
-        
     BinarySearchTree* myBST = new BinarySearchTree();
 
     myBST->insert(47);
@@ -126,13 +201,21 @@ int main() {
 
     cout << "Breadth First Search:\n";
     myBST->BFS();
+    cout << "\n";
 
-    /*
-        EXPECTED OUTPUT:
-        ----------------
-        Breadth First Search:
-        47 21 76 18 27 52 82 
+    cout << "Depth First Search - PreOrder:\n";
+    myBST->DFSPreOrder();
+    cout << "\n";
 
-    */    
-    
+    cout << "Depth First Search - InOrder:\n";
+    myBST->DFSInOrder();
+    cout << "\n";
+
+    cout << "Depth First Search - PostOrder:\n";
+    myBST->DFSPostOrder();
+    cout << "\n";
+
+    delete myBST;
+    return 0;
 }
+
