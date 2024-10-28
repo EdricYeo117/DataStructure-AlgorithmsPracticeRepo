@@ -35,6 +35,10 @@ struct Node {
         - head: Pointer to the head node of the linked list.
     Returns:
         - void
+    Time Complexity:
+        O(n) - Where n is the number of nodes in the list, as it visits each node once.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Initialize a pointer 'current' to the head of the list.
         2. Use a while loop to iterate through the list until 'current' becomes nullptr.
@@ -62,6 +66,10 @@ void traverseLinkedList(Node* head) {
         - value: The integer value to search for in the list.
     Returns:
         - bool: Returns true if the value is found, otherwise false.
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes, the function may need to traverse the entire list.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Initialize a pointer 'current' to the head of the list.
         2. Use a while loop to traverse the list until 'current' is nullptr.
@@ -91,6 +99,10 @@ bool searchLinkedList(Node* head, int value) {
         - head: Pointer to the head node of the linked list.
     Returns:
         - int: The total number of nodes in the list.
+    Time Complexity:
+        O(n) - Where n is the number of nodes, as it traverses each node once.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Initialize a counter 'length' to 0.
         2. Initialize a pointer 'current' to the head of the list.
@@ -120,6 +132,10 @@ int findLength(Node* head) {
         - value: The integer value to be inserted into the new node.
     Returns:
         - Node*: Pointer to the new head of the linked list.
+    Time Complexity:
+        O(1) - Constant time insertion at the beginning.
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
     Steps:
         1. Create a new node 'newNode' with the provided 'value'.
         2. Set the 'next' pointer of 'newNode' to the current 'head'.
@@ -141,6 +157,10 @@ Node* insertAtBeginning(Node* head, int value) {
         - value: The integer value to be inserted into the new node.
     Returns:
         - Node*: Pointer to the head of the linked list after insertion.
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes, the function traverses the entire list to find the last node.
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
     Steps:
         1. Create a new node 'newNode' with the provided 'value'.
         2. Check if the list is empty (i.e., 'head' is nullptr).
@@ -177,6 +197,10 @@ Node* insertAtEnd(Node* head, int value) {
         - data: The integer value to be inserted into the new node.
     Returns:
         - Node*: Pointer to the head of the linked list after insertion.
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes, the function may need to traverse up to position-1 nodes.
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
     Steps:
         1. Validate that 'position' is a positive integer (>= 1).
             a. If not, output an error message and return the original 'head'.
@@ -243,6 +267,10 @@ Node* insertAtPosition(Node* head, int position, int data) {
         - head: Pointer to the head node of the linked list.
     Returns:
         - Node*: Pointer to the new head of the linked list after deletion.
+    Time Complexity:
+        O(1) - Constant time deletion from the beginning.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Check if the list is empty (i.e., 'head' is nullptr).
             a. If empty, output an error message and return nullptr.
@@ -271,6 +299,10 @@ Node* deleteFromBeginning(Node* head) {
         - head: Pointer to the head node of the linked list.
     Returns:
         - Node*: Pointer to the head of the linked list after deletion.
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes, the function traverses the entire list to find the second last node.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Check if the list is empty (i.e., 'head' is nullptr).
             a. If empty, output an error message and return nullptr.
@@ -310,7 +342,6 @@ Node* removeLastNode(Node* head) {
     return head; // Return the head of the list (unchanged)
 }
 
-
 /*
     Function: deleteAtPosition
     Purpose: Delete the node at a specific position in the linked list.
@@ -319,6 +350,10 @@ Node* removeLastNode(Node* head) {
         - position: The 1-based position of the node to be deleted.
     Returns:
         - Node*: Pointer to the head of the linked list after deletion.
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes, the function may need to traverse up to position-1 nodes.
+    Space Complexity:
+        O(1) - Uses a constant amount of extra space.
     Steps:
         1. Check if the list is empty or if the position is invalid (less than 1).
             a. If either condition is true, output an error message and return the original head.
@@ -355,7 +390,7 @@ Node* deleteAtPosition(Node* head, int position)
     // Step 2: If the head needs to be deleted
     if (position == 1) {
         Node* temp = head;    // Store the current head in a temporary pointer
-        head = head->next;    // Update the head to point to the next node
+        head = head->next;    // Update 'head' to point to the next node in the list
         delete temp;          // Delete the old head node to free memory
         return head;          // Return the new head of the list
     }

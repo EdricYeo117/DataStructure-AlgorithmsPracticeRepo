@@ -13,12 +13,24 @@ struct Node {
     }
 };
 
-// Function to insert a new node at the beginning of the list
-// Parameters:
-// - head: Pointer to the current head of the list
-// - new_data: The data value for the new node
-// Returns:
-// - Pointer to the new head of the list
+/*
+    Function: insertAtFront
+    -----------------------
+    Inserts a new node at the beginning of the linked list.
+
+    Parameters:
+        head     : Pointer to the current head of the list.
+        new_data : The data value for the new node.
+
+    Returns:
+        Pointer to the new head of the list.
+
+    Time Complexity:
+        O(1) - Constant time insertion at the front.
+
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
+*/
 Node* insertAtFront(Node* head, int new_data) {
     // Allocate memory for the new node and initialize it with new_data
     Node* new_node = new Node(new_data);
@@ -30,13 +42,26 @@ Node* insertAtFront(Node* head, int new_data) {
     return new_node;
 }
 
-// Function to insert a new node after a node containing the specified key
-// Parameters:
-// - head: Pointer to the head of the list
-// - key: The data value after which the new node should be inserted
-// - newData: The data value for the new node
-// Returns:
-// - Pointer to the head of the list (unchanged if key not found)
+/*
+    Function: insertAfter
+    ---------------------
+    Inserts a new node after the first node containing the specified key.
+
+    Parameters:
+        head    : Pointer to the head of the list.
+        key     : The data value after which the new node should be inserted.
+        newData : The data value for the new node.
+
+    Returns:
+        Pointer to the head of the list (unchanged if key not found).
+
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes,
+              the function may need to traverse the entire list to find the key.
+
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
+*/
 Node* insertAfter(Node* head, int key, int newData) {
     // Initialize a pointer to traverse the list starting from head
     Node* curr = head;
@@ -65,13 +90,26 @@ Node* insertAfter(Node* head, int key, int newData) {
     return head;
 }
 
-// Function to insert a new node before a node containing the specified key
-// Parameters:
-// - head: Pointer to the head of the list
-// - key: The data value before which the new node should be inserted
-// - newData: The data value for the new node
-// Returns:
-// - Pointer to the head of the list (updated if insertion is at the head)
+/*
+    Function: insertBeforeKey
+    -------------------------
+    Inserts a new node before the first node containing the specified key.
+
+    Parameters:
+        head    : Pointer to the head of the list.
+        key     : The data value before which the new node should be inserted.
+        newData : The data value for the new node.
+
+    Returns:
+        Pointer to the head of the list (updated if insertion is at the head).
+
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes,
+              the function may need to traverse the entire list to find the key.
+
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
+*/
 Node* insertBeforeKey(Node* head, int key, int newData) {
     // If the list is empty, there's nothing to insert before
     if (head == nullptr) {
@@ -112,13 +150,26 @@ Node* insertBeforeKey(Node* head, int key, int newData) {
     return head;
 }
 
-// Function to insert a new node at a specific position in the list
-// Parameters:
-// - head: Pointer to the head of the list
-// - position: The position at which to insert the new node (1-based index)
-// - data: The data value for the new node
-// Returns:
-// - Pointer to the head of the list (updated if insertion is at the head)
+/*
+    Function: insertAtPosition
+    --------------------------
+    Inserts a new node at a specific position in the linked list.
+
+    Parameters:
+        head     : Pointer to the head of the list.
+        position : The position at which to insert the new node (1-based index).
+        data     : The data value for the new node.
+
+    Returns:
+        Pointer to the head of the list (updated if insertion is at the head).
+
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes,
+              the function may need to traverse up to position-1 nodes.
+
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
+*/
 Node* insertAtPosition(Node* head, int position, int data) {
     // Create a new node with the specified data
     Node* newNode = new Node(data);
@@ -158,12 +209,25 @@ Node* insertAtPosition(Node* head, int position, int data) {
     return head;
 }
 
-// Function to insert a new node at the end of the list
-// Parameters:
-// - head: Pointer to the head of the list
-// - new_data: The data value for the new node
-// Returns:
-// - Pointer to the head of the list (updated if the list was empty)
+/*
+    Function: insertAtEnd
+    ---------------------
+    Inserts a new node at the end of the linked list.
+
+    Parameters:
+        head     : Pointer to the head of the list.
+        new_data : The data value for the new node.
+
+    Returns:
+        Pointer to the head of the list (updated if the list was empty).
+
+    Time Complexity:
+        O(n) - In the worst case, where n is the number of nodes,
+              the function traverses the entire list to find the last node.
+
+    Space Complexity:
+        O(1) - Only a new node is created regardless of list size.
+*/
 Node* insertAtEnd(Node* head, int new_data) {
     // Create a new node with the specified data
     Node* new_node = new Node(new_data);
