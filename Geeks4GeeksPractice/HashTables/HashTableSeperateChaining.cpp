@@ -48,7 +48,7 @@ public:
 class HashTable {
 private:
     // Array of pointers to HashNode representing the buckets
-    HashNode** table;
+    HashNode** table; // This is a pointer to another pointer (double pointer), i.e pointer that holds the address of another pointer
     int numBuckets;  // Number of buckets in the hash table
 
     /*

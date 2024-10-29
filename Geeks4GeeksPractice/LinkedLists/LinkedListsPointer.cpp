@@ -273,4 +273,34 @@ public:
         delete second_last->next;     // Delete the last node to free memory
         second_last->next = nullptr;  // Set 'second_last->next' to nullptr to indicate the new end of the list
     }
+
+
+    // Function to rotate the linked list by moving the first 'k' nodes to the end
+    void rotateList(int k) {
+        if (k <= 0 || head == nullptr || head->next == nullptr) return;
+
+        // Find the length of the list
+        int length = 1;
+        Node* tail = head;
+        while (tail->next != nullptr) {
+            tail = tail->next;
+            length++;
+        }
+
+        // If k is greater than or equal to the length, we take k % length
+        k = k % length;
+        if (k == 0) return;  // No rotation needed if k is a multiple of length
+
+        // Find the new tail (at position length - k)
+        Node* newTail = head;
+        for (int i = 1; i < length - k; i++) {
+            newTail = newTail->next;
+        }
+
+        // Set the new head and rotate
+        Node* newHead = newTail->next;
+        newTail->next = nullptr;
+        tail->next = head;
+        head = newHead;
+    }
 };
