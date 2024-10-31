@@ -33,16 +33,15 @@ public:
         // Calculate the bucket index for the key
         int bucket = hash(key);
         // Check if the key is already present in the bucket
-        for (auto it = hashTable[bucket].begin(); it != hashTable[bucket].end(); it++) {
+        for (auto &p : hashTable[bucket]) {
             // If the key is found, update the value
-            if (it->first == key) {
-                it->second = value;
+            if (p.first == key) {
+                p.second = value;
                 return;
-            } else {
-                // Add the key-value pair to the bucket
-                hashTable[bucket].push_back({key, value});
-            }
+            } 
         }
+        // Add the key-value pair to the bucket
+        hashTable[bucket].push_back({key, value});
     }
     
     int get(int key) {
