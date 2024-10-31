@@ -5,7 +5,8 @@ This repository contains my practice implementations of various data structures 
 
 ## Contents
 The repository is organized by the type of data structure or algorithm by .cpp files. Each .cpp file contains respective C++ implementations
-LeetCode folder contain practice questions sorted by data structure type 
+LeetCode folder contain practice questions sorted by data structure type, there are Udemy course versions of the solution and standard solutions (differing between return types for functions)
+Geeks4Geeks folder contains interview questions sorted by data structure type
 
 ### Data Structures
 - **Linked Lists** ✔
@@ -19,16 +20,16 @@ LeetCode folder contain practice questions sorted by data structure type
 
 ### Algorithms
 - **Sorting Algorithms**
-  - Bubble Sort
-  - Quick Sort
-  - Merge Sort
-  - Insertion Sort
-  - Selection Sort
+  - Bubble Sort ✔
+  - Quick Sort ✔
+  - Merge Sort ✔
+  - Insertion Sort ✔
+  - Selection Sort ✔
 - **Searching Algorithms**
-  - Binary Search
-  - Depth-First Search (DFS)
-  - Breadth-First Search (BFS)
-- **Dynamic Programming**
+  - Binary Search ✔
+  - Depth-First Search (DFS) ✔
+  - Breadth-First Search (BFS) ✔
+- **Dynamic Programming** 
 - **Greedy Algorithms**
 - **Backtracking**
 - **Divide and Conquer**
