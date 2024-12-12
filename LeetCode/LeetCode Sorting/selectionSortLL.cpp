@@ -121,6 +121,39 @@ void selectionSort() {
 }
 
 
+   /* template <typename ItemType>
+    void selectionSort(ItemType item) {
+        // Assuming `head` and `length` are member variables or accessible globally.
+        if (length <= 1) return; // If the list is empty or has only one element, it's already sorted
+
+        Node<ItemType>* current = head; // Pointer to traverse the list
+
+        // Outer loop - Traverse through the list
+        while (current != nullptr) {
+            Node<ItemType>* smallest = current; // Assume the current node is the smallest
+            Node<ItemType>* nextNode = current->next; // Pointer to the next node
+
+            // Inner loop - Find the smallest element in the remaining unsorted part
+            while (nextNode != nullptr) {
+                if (nextNode->value < smallest->value) {
+                    smallest = nextNode; // Update the smallest node
+                }
+                nextNode = nextNode->next; // Move to the next node
+            }
+
+            // Swap the values of the current node and the smallest node found
+            if (smallest != current) {
+                // Use `item` as a placeholder for swapping
+                item = current->value;
+                current->value = smallest->value;
+                smallest->value = item;
+            }
+
+            // Move to the next node in the list
+            current = current->next;
+        }
+    }
+*/
 };
 
 
