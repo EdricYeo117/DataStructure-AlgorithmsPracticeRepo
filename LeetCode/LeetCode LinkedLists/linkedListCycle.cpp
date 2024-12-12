@@ -2,7 +2,22 @@
 
 There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
 
-Return true if there is a cycle in the linked list. Otherwise, return false.*/
+Return true if there is a cycle in the linked list. Otherwise, return false
+
+Time Complexity:
+- The `slow` pointer traverses each node once, and the `fast` pointer traverses at most twice as many nodes as the `slow` pointer.
+- In the worst case, all nodes are traversed once or twice, making the time complexity:
+  O(n), where n is the number of nodes in the list.
+
+Space Complexity:
+- The algorithm uses only two pointers (`slow` and `fast`) for traversal.
+- No additional data structures are used, so the space complexity is:
+  O(1).
+  
+  */
+
+#include <iostream>
+
 struct ListNode {
     int val;
     ListNode *next;

@@ -1,5 +1,15 @@
 /*Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. 
-If the two linked lists have no intersection at all, return null.*/
+If the two linked lists have no intersection at all, return null.
+
+Time Complexity:
+- Each pointer traverses its respective list once and then traverses the other list once.
+- In total, each pointer traverses a maximum of (m + n) nodes, where m is the length of list A and n is the length of list B.
+- Overall Time Complexity: O(m + n)
+
+Space Complexity:
+- The algorithm uses only two pointers (ptrA and ptrB) and no additional data structures.
+- Overall Space Complexity: O(1)
+*/
 struct ListNode {
     int val;
     ListNode *next;
@@ -30,3 +40,4 @@ public:
         return ptrA;
     }
 };
+

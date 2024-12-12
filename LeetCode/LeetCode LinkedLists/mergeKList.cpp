@@ -1,6 +1,31 @@
 /*You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
 Merge all the linked-lists into one sorted linked-list and return it.*/
+
+/*
+Time Complexity:
+- Heap Operations:
+  Each of the k linked lists has n nodes on average.
+  - The priority queue can contain at most k elements at a time.
+  - Insertion and extraction from the heap take O(log k).
+  - For kn nodes, the total cost of heap operations is:
+    O(kn log k).
+- Pointer Operations:
+  Each node is processed exactly once, so the cost of pointer manipulations is:
+    O(kn).
+- Overall Time Complexity:
+  O(kn log k).
+
+Space Complexity:
+- Priority Queue:
+  At most k nodes are in the priority queue at any given time, requiring:
+    O(k).
+- Additional Memory:
+  Only a dummy node and a few pointers are used, contributing O(1) additional space.
+- Overall Space Complexity:
+  O(k).
+*/
+
 #include <queue>
 #include <vector>
 using namespace std;
